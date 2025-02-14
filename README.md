@@ -9,3 +9,5 @@ Step 3: Install dependencies using the following command
 
 Step 4: Run the code uinsg the following command
 'python app.py'
+
+Step 5: The application runs on 'http://127.0.0.1:5000/'
