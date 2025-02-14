@@ -1,0 +1,155 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #e0f2fe 0%, #93c5fd 50%, #3b82f6 100%);
+    color: #1A4870;
+
+    /* height: 100vh; */
+    margin: 0;
+   
+}
+
+.container {
+        
+    background-color: #f4f4f9;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    border: 2px solid black; 
+    text-align: center;
+    position: relative;
+}
+
+h1 {
+    color: black;
+    margin-bottom: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    color: black;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+input[type="text"], input[type="password"], input[type="file"] {
+    display: block;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 2px solid #5B99C2;
+    border-radius: 5px;
+    background-color: #c3d9d5;
+    color: #1A4870;
+    font-size: 16px;
+    width: 100%;
+}
+
+input[type="submit"], button[type="button"] {
+    background-color:  #0077b6;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+input[type="submit"]:hover, button[type="button"]:hover {
+    background-color:  #016499;
+}
+
+h2 {
+    color: black;
+    margin-top: 20px;
+}
+
+p {
+    color:black;
+    font-size: 14px;
+}
+
+a {
+    color: #163d57;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Specific Styles for Login and Signup pages */
+input[type="password"] {
+    width: calc(100% - 30px); /* Make the password field take up more space */
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+/* Button to Show/Hide Password */
+.show-password {
+    background-color: transparent;
+    border: none;
+    color: #1A4870;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+        max-width: 90%;
+    }
+}
+/* Style the redirect Sign Up button */
+
+
+
+/* Style for the flash messages */
+.flash-messages {
+    list-style-type: none;
+    padding: 0;
+}
+
+.flash-messages li {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.flash-messages .error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.flash-messages .info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+/* Style for the logout button */
+form button {
+    background-color: #f44336; /* Red color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #d32f2f;
+}

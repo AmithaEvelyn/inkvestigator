@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signature Verification</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.png') }}">
+    <style>
+         header {
+            background: linear-gradient(90deg, #1a73e8, #0077b6);
+            color: white;
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .con
+        {
+            justify-content: center; /* Center horizontally */
+            align-items: center; 
+            display: flex;
+            height: 100vh;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #1a73e8;
+            color: white;
+        }
+
+        footer a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+        header .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        header .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        header nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+        }
+
+        header nav a:hover {
+            text-decoration: underline;
+        }
+        .logout-button{
+    background-color: rgb(201, 200, 200); /* Set background color to gray */
+    color: black; /* Set text color to black */
+    border: none;
+    padding: 10px 20px; /* Adjust padding as needed */
+    cursor: pointer;
+    display: flex;
+    border-radius:5%;
+    align-items: center;
+    justify-content: center;
+    position: absolute; /* Position the button at the top right */
+    right: 20px; /* Align to the right */
+    top: 20px; /* Add some space from the top */
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo" onclick="window.location.href='/'";>
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
+            <!-- <img src="logo.png" alt="Inkvestigator Logo"> -->
+            Inkvestigator
+            
+        </div>
+        <nav>
+            <button class="logout-button" onclick="window.location.href='/'";>Logout</button>
+            </nav>
+    </header>
+    <div class = "con">
+    <div class="container">
+        <h1>Signature Verification</h1>
+        
+        <!-- Show Logout button if the user is logged in -->
+        {% if username %}
+            <form action="{{ url_for('logout') }}" method="POST">
+                <button type="submit" class="logout-button">Logout</button>
+            </form>
+        {% endif %}
+
+        <form method="POST" enctype="multipart/form-data">
+            <label for="image1">Image 1:</label>
+            <input type="file" name="image1" required><br>
+            <label for="image2">Image 2:</label>
+            <input type="file" name="image2" required><br>
+            <input type="submit" value="Submit">
+        </form>
+
+        {% if note %}
+        <h2>Result: {{ note }}</h2>
+        {% else %}
+        <h2>Please upload the images to verify the signature.</h2>
+        {% endif %}
+    </div>
+</div>
+    <footer>
+        <p>&copy; 2024 Inkvestigator. All rights reserved. <a href="#">Privacy Policy</a></p>
+    </footer>
+</body>
+</html>
